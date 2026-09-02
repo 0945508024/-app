@@ -3,94 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ኩሉ ብሓደ - ማስታወቂያ መPostMapping</title>
-    <!-- Telegram WebApp SDK -->
+    <title>ኩሉ - የቤትና የተሽከርካሪ ኪራይ</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--tg-theme-bg-color, #ffffff);
-            color: var(--tg-theme-text-color, #000000);
-            padding: 15px;
-            margin: 0;
-        }
-        h2 { text-align: center; color: #0088cc; }
-        .form-group { margin-bottom: 12px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+        * {
             box-sizing: border-box;
-            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--tg-theme-button-color, #0088cc);
-            color: var(--tg-theme-button-text-color, #ffffff);
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 10px;
+        }
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+            padding: 10px 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 12px;
+        }
+        .logo {
             font-weight: bold;
-            margin-top: 10px;
+            font-size: 18px;
+            color: #3182ce;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-tg {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        /* Notice Text */
+        .info-box {
+            background: #fff;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .info-box p { margin-bottom: 6px; }
+        .warning {
+            color: #e53e3e;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        /* Listing Banner Header */
+        .section-header {
+            background: linear-gradient(135deg, #3b82f6, #9333ea);
+            color: white;
+            padding: 15px;
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .add-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        /* Listing Card */
+        .card {
+            background: white;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #def7ec;
+            color: #03543f;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .date {
+            font-size: 11px;
+            color: #718096;
+            float: right;
         }
     </style>
 </head>
 <body>
 
-    <h2>አዲስ ማስታወቂያ ማስገቢያ</h2>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">🏠 ኩሉ ደላላ</div>
+        <button class="btn-tg">ቴሌግራም</button>
+    </div>
 
-    <form id="listingForm">
-        <div class="form-group">
-            <label for="category">ዘርፍ (Category)</label>
-            <select id="category" required>
-                <option value="የቤት ኪራይ/ሽያጭ">የቤት ኪራይ/ሽያጭ</option>
-                <option value="የመኪና ኪራይ/ሽያጭ">የመኪና ኪራይ/ሽያጭ</option>
-                <option value="ሌሎች">ሌሎች</option>
-            </select>
+    <!-- Info Box -->
+    <div class="info-box">
+        <p>የኪራይ ዝርዝር መረጃ በማንበብ አከራይን ያናግሩ። አዲስ የሚከራይ ለመለቀቅ <strong>+</strong> ምልክቱን ይጫኑ።</p>
+        <p class="warning">ልብ በሉ: ደላላ አናስተናግድም! አከራይ ወይም ተከራይ ደላላ ሆነው ከተገኙ ምንም አይነት ክፍያ እንዳይከፍሉ።</p>
+    </div>
+
+    <!-- Section Title Banner -->
+    <div class="section-header">
+        <div>
+            <h3>የኪራይ ዝርዝር መረጃ</h3>
+            <p style="font-size: 11px; opacity: 0.9;">የሚከራይ ለመለቀቅ + ምልክቱን ይጫኑ</p>
         </div>
+        <button class="add-btn">+</button>
+    </div>
 
-        <div class="form-group">
-            <label for="title">ርዕስ (Title)</label>
-            <input type="text" id="title" placeholder="ለምሳሌ፦ ቪላ ቤት የሚከራይ" required>
+    <!-- Property Card Item -->
+    <div class="card">
+        <div class="image-container">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80" alt="የሚከራይ ቤት">
         </div>
-
-        <div class="form-group">
-            <label for="price">ዋጋ (Price in ETB)</label>
-            <input type="number" id="price" placeholder="ለምሳሌ፦ 15000" required>
+        <div class="card-body">
+            <div class="card-title">የሚከራይ የመኖሪያ ቤት</div>
+            <div>
+                <span class="badge">✓ Active</span>
+                <span class="date">📅 2026-09-02</span>
+            </div>
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="description">ዝርዝር መግለጫ (Description)</label>
-            <textarea id="description" rows="3" placeholder="ስለ እቃው ወይም ቤቱ ማብራሪያ..."></textarea>
-        </div>
-
-        <button type="submit">መረጃውን ላክ</button>
-    </form>
-
-    <script>
-        const tg = window.Telegram.WebApp;
-        tg.expand(); // አፑን በሙሉ ስክሪን ይከፍታል
-
-        document.getElementById('listingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = {
-                category: document.getElementById('category').value,
-                title: document.getElementById('title').value,
-                price: document.getElementById('price').value,
-                description: document.getElementById('description').value
-            };
-
-            // መረጃውን ወደ Telegram Bot መላክ
-            tg.sendData(JSON.stringify(formData));
-
-            // አፑን መዝጋት
-            tg.close();
-        });
-    </script>
 </body>
 </html>
