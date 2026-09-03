@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የንግድ ስም - የንግድ ማዕከል</title>
+    <style>
+        /* CSS Styling - የድረ-ገጹ ዲዛይን */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #0d233a;
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9900;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 35, 58, 0.8), rgba(13, 35, 58, 0.8)), url('https://via.placeholder.com/1200x500') center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #ff9900;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e68a00;
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #0d233a;
+        }
+
+        /* Services & Products Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #0d233a;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d233a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- መግቢያ / Header -->
+    <header>
+        <div class="logo">የንግድ ስምዎ</div>
+        <nav>
+            <a href="#about">ስለ እኛ</a>
+            <a href="#products">ምርቶች/አገልግሎቶች</a>
+            <a href="#order">ትእዛዝ ማዘዣ</a>
+            <a href="#contact">አድራሻ</a>
+        </nav>
+    </header>
+
+    <!-- ዋና መግቢያ ገፅ / Hero Section -->
+    <section class="hero">
+        <h1>እንኳን ወደ ንግድ ማዕከላችን በደህና መጡ!</h1>
+        <p>ጥራት ያላቸውን ምርቶችና አገልግሎቶች በተጣጣመ ዋጋ እዚህ ያገኛሉ።</p>
+        <a href="#order" class="btn">አሁኑኑ ይዘዙ</a>
+    </section>
+
+    <!-- ስለ ድርጅቱ / About Us -->
+    <section id="about" class="container">
+        <h2 class="section-title">ስለ እኛ</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto;">
+            ድርጅታችን ደንበኞቹን በታማኝነትና በጥራት ለማገልገል የተቋቋመ የንግድ ድርጅት ሲሆን፣ ለደንበኞቻችን ምርጥ ምርቶችንና ፈጣን አገልግሎቶችን በማቅረብ ይታወቃል።
+        </p>
+    </section>
+
+    <!-- ምርቶች እና አገልግሎቶች / Products & Services -->
+    <section id="products" class="container">
+        <h2 class="section-title">ምርቶች እና አገልግሎቶች</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>ምርት/አገልግሎት 1</h3>
+                <p>የዚህ ምርት አጭር መግለጫ እና የሚሰጠው ጥቅም እዚህ ይጻፋል።</p>
+                <div class="price">1,500 ብር</div>
+                <a href="#order" class="btn">እዘዝ</a>
+            </div>
+            <div class="card">
+                <h3>ምርት/አገልግሎት 2</h3>
+                <p>የዚህ ምርት አጭር መግለጫ እና የሚሰጠው ጥቅም እዚህ ይጻፋል።</p>
+                <div class="price">2,800 ብር</div>
+                <a href="#order" class="btn">እዘዝ</a>
+            </div>
+            <div class="card">
+                <h3>ምርት/አገልግሎት 3</h3>
+                <p>የዚህ ምርት አጭር መግለጫ እና የሚሰጠው ጥቅም እዚህ ይጻፋል።</p>
+                <div class="price">4,000 ብር</div>
+                <a href="#order" class="btn">እዘዝ</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- የትእዛዝ መቀበያ ፎርም / Order Form -->
+    <section id="order" class="container">
+        <h2 class="section-title">ትእዛዝ ማቅረቢያ</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('ትእዛዝዎ ተልኳል! በቅርቡ እንገናኝዎታለን።');">
+            <div class="form-group">
+                <label for="name">ሙሉ ስም</label>
+                <input type="text" id="name" required placeholder="ስምዎን ያስገቡ">
+            </div>
+            <div class="form-group">
+                <label for="phone">ስልክ ቁጥር</label>
+                <input type="tel" id="phone" required placeholder="09--------">
+            </div>
+            <div class="form-group">
+                <label for="product">የሚፈልጉት ምርት/አገልግሎት</label>
+                <select id="product">
+                    <option>ምርት/አገልግሎት 1</option>
+                    <option>ምርት/አገልግሎት 2</option>
+                    <option>ምርት/አገልግሎት 3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">ተጨማሪ መልእክት (ካለ)</label>
+                <textarea id="message" rows="4" placeholder="ተጨማሪ መረጃ ካለዎት ይፃፉ..."></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">ትእዛዝ ላክ</button>
+        </form>
+    </section>
+
+    <!-- አድራሻ / Contact -->
+    <section id="contact" style="background-color: #e9ecef; padding: 40px 20px;">
+        <div class="container" style="padding: 0;">
+            <h2 class="section-title">የመገናኛ አድራሻችን</h2>
+            <div style="text-align: center; font-size: 1.1rem;">
+                <p>📍 <strong>አድራሻ፡</strong> አዲስ አበባ፣ ኢትዮጵያ</p>
+                <p>📞 <strong>ስልክ፡</strong> +251 900 000 000</p>
+                <p>✉️ <strong>ኢሜይል፡</strong> info@yourbusiness.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 የንግድ ስምዎ። መብቱ በህግ የተጠበቀ ነው።</p>
+    </footer>
+
+</body>
+</html>
